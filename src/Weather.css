@@ -1,22 +1,13 @@
 h4{
     line-height: 0.8;
 }
-video{
-    object-fit: cover;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-}
 a{
     color: white;
 }
 body{
-    background: url(https://images.pexels.com/photos/1254736/pexels-photo-1254736.jpeg) no-repeat fixed center;
-    background-size: cover;
-    box-sizing: border-box;
-
+     background: url(https://images.pexels.com/photos/1254736/pexels-photo-1254736.jpeg) no-repeat fixed center;
+  background-size: cover;
+  box-sizing: border-box;
 }
 .container{
     max-width: 600px;
@@ -83,10 +74,10 @@ body{
     color: white;
     margin: 0 auto;
 }
-#day{
+.day{
     padding-bottom: 0px;
 }
-#current-temp{
+.current-temp{
     display:inline-block;
     font-weight: 600;
     font-size: 58px;
@@ -106,7 +97,7 @@ body{
 .weather-container img{
    margin: 0 auto;
 }
-#weather:first-letter{
+.weather:first-letter{
     text-transform: capitalize;
 }
 .weather-description-container{
