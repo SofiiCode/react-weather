@@ -1,0 +1,130 @@
+h4{
+    line-height: 0.8;
+}
+video{
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+a{
+    color: white;
+}
+body{
+    background: url(https://images.pexels.com/photos/1254736/pexels-photo-1254736.jpeg) no-repeat fixed center;
+    background-size: cover;
+    box-sizing: border-box;
+
+}
+.container{
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.row{
+    padding-top: 20px;   
+}
+.input-city{
+    position: relative;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 100%; 
+}
+.form-control{
+    width: 300px;
+    margin-bottom: 10px;
+}
+.buttons{
+    width: 200px;
+    padding-right: 0;
+    float: right; 
+}
+.btn{
+     width: 90px;
+}
+.btn-search{
+    background: #EC6E4C;
+    border: 0;
+    color: white;
+     transition: all,2s, ease-in-out;
+}
+.btn-search:hover,
+.btn-search:active,
+.btn-search:focus
+{
+    opacity: 0.9;
+    color: white;
+    background: #EC6E4C;
+}
+.btn-current{
+    background: #48484A;
+    border: 0;
+    margin-left: 10px;
+    color: white;
+    transition: all,2s, ease-in-out;
+}
+.btn-current:hover,
+.btn-current:active,
+.btn-current:focus{
+    opacity: 0.9;
+    background: #48484A;
+    color: white;
+}
+.current-city-container{
+    width: 100%;
+    background: #48484A;
+    border-radius: 4px;
+    opacity: 0.8;
+    color: white;
+    margin: 0 auto;
+}
+#day{
+    padding-bottom: 0px;
+}
+#current-temp{
+    display:inline-block;
+    font-weight: 600;
+    font-size: 58px;
+    line-height: 1.0;
+}
+.currentEmoji{
+    display:block;
+    margin-top: 10px;
+}
+.col{
+    padding: 0 20px;
+  margin: 0 auto;
+}
+.weather-container{
+   text-align: center;
+}
+.weather-container img{
+   margin: 0 auto;
+}
+#weather:first-letter{
+    text-transform: capitalize;
+}
+.weather-description-container{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;  
+}
+.cards-container{
+    text-align: center;
+    padding-bottom: 20px;
+}
+.coder{
+    margin-top: 20px;
+    font-size: small;
+    color: white;
+}
+.card{
+    align-items: center;
+    text-align: center;
+}
