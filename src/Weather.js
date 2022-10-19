@@ -86,10 +86,10 @@ export default function Weather (){
          </div>
          <div className="weather-forecast"></div>
        </div>
-       <div className="coder">
+       <footer className="coder">
          This project was coded by Sofiia Andrusyshyn and is open-soursed on{" "}
-         <a href="https://github.com/SofiiCode/react-weather.git">GitHub</a>{" "}
-       </div>
+         <a href="https://github.com/SofiiCode/react-weather.git" target="_blank">GitHub</a>{" "}
+       </footer>
      </div>
    );
 }

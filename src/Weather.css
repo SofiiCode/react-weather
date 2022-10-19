@@ -1,14 +1,4 @@
-h4{
-    line-height: 0.8;
-}
-a{
-    color: white;
-}
-body{
-     background: url(https://images.pexels.com/photos/1254736/pexels-photo-1254736.jpeg) no-repeat fixed center;
-  background-size: cover;
-  box-sizing: border-box;
-}
+
 .container{
     max-width: 600px;
     margin: 0 auto;
