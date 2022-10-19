@@ -3,15 +3,7 @@ import axios from "axios";
 import "./Weather.css";
 
 export default function Weather (){
-//     function handleResponse(response){
-//         console.log(response)
-//     }
-//    function getApi(event) {
-//      event.preventDefault();
-//      let url = `https://api.openweathermap.org/data/2.5/weather?q=London&appid=6876f80c7fdc4d4f6b847b1ddd6523b8&units=metric`;
-//      axios.get(url).then(handleResponse);
- //   } 
-
+    
  const [city, setCity] = useState("");
  const [temp, setTemp] = useState(null);
  const [titlle, setTitlle] = useState("");
@@ -88,7 +80,13 @@ export default function Weather (){
        </div>
        <footer className="coder">
          This project was coded by Sofiia Andrusyshyn and is open-soursed on{" "}
-         <a href="https://github.com/SofiiCode/react-weather.git" target="_blank">GitHub</a>{" "}
+         <a
+           href="https://github.com/SofiiCode/react-weather.git"
+           target="_blank"
+           rel="noreferrer"
+         >
+           GitHub
+         </a>{" "}
        </footer>
      </div>
    );
