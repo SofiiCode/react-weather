@@ -1,3 +1,9 @@
-.coder{
+.App{
   text-align: center;
+  color: white;
+}
+.coder{
+    margin-top: 20px;
+    font-size: small;
+    color: white;
 }
