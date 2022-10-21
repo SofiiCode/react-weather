@@ -1,31 +1,32 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
-
-export default function Weather (){
-    const [ready, setReady] = useState(false)
-//  const [city, setCity] = useState("");
- const [temp, setTemp] = useState(null);
+import FormatedDate from "./FormatedDate"
+export default function Weather (props){
+   
+ const [weatherData, setWeatherData] = useState({ready:false});
  const [titlle, setTitlle] = useState("");
- const [humidity, setHumidity] = useState(null);
- const [desc, setDesc] = useState("");
- const [wind, setWind] = useState(null);
- const [icon, setIcon] = useState("");
+
 
  function handleResponse(response) {
    
-   setTemp(`${Math.round(response.data.main.temp)} `);
+   setWeatherData({
+     ready: true,
+
+     temp: `${Math.round(response.data.main.temp)} `,
+     humidity: response.data.main.humidity,
+     wind: ` ${Math.round(response.data.wind.speed)}`,
+     description: response.data.weather[0].description,
+     icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+     date: new Date(response.data.dt * 1000)
+   });
    setTitlle(`${response.data.name}, ${response.data.sys.country}:`);
-   setHumidity(` ${response.data.main.humidity}`);
-   setDesc(`${response.data.weather[0].description} `);
-   setWind(` ${Math.round(response.data.wind.speed)}`);
-   setIcon(
-     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-   );
-    setReady(true);
+   
+   
+    
    console.log(response);
  }
-   if (ready) {
+   if (weatherData.ready) {
      return (
        <div className="container ">
          <form
@@ -53,51 +54,58 @@ export default function Weather (){
          <div className="row current-city-container shadow">
            <div className="col">
              <h1 className="current-city">{titlle}</h1>
-             <p className="day"></p>
+             <p className="day">
+               <FormatedDate date={weatherData.date} />
+             </p>
            </div>
            <div className="col">
              <div className="weather-container">
-               <img src={icon} className="currentEmoji" alt="" width="65px" />
-               <p className="weather">{desc}</p>
+               <img
+                 src={weatherData.icon}
+                 className="currentEmoji"
+                 alt=""
+                 width="65px"
+               />
+               <p className="weather ">{weatherData.description}</p>
              </div>
            </div>
            <div className="col weather-description-container">
              <div>
-               <h1 className="current-temp">{temp}</h1>
-               <span>°С</span>
+               <h1 className="current-temp">{weatherData.temp}</h1>
+               <span> °С</span>
              </div>
              <div className="description-container">
                <p className="weather-description">
-                 <span>Humidity: {humidity}</span> <br />
-                 <span>Wind:{wind}km/h</span>
+                 <span>Humidity: {weatherData.humidity} %</span> <br />
+                 <span>Wind:{weatherData.wind} km/h</span>
                </p>
              </div>
            </div>
            <div className="weather-forecast">
              <div className="col-2">
                <p>Day</p>
-               <img src={icon} alt="" width="65px"></img>
-               <p>12 C</p>
+               <img src={weatherData.icon} alt="" width="65px"></img>
+               <p>12 °C</p>
              </div>
              <div className="col-2">
                <p>Day</p>
-               <img src={icon} alt="" width="65px"></img>
-               <p>12 C</p>
+               <img src={weatherData.icon} alt="" width="65px"></img>
+               <p>12 °C</p>
              </div>
              <div className="col-2">
                <p>Day</p>
-               <img src={icon} alt="" width="65px"></img>
-               <p>12 C</p>
+               <img src={weatherData.icon} alt="" width="65px"></img>
+               <p>12 °C</p>
              </div>
              <div className="col-2">
                <p>Day</p>
-               <img src={icon} alt="" width="65px"></img>
-               <p>12 C</p>
+               <img src={weatherData.icon} alt="" width="65px"></img>
+               <p>12 °C</p>
              </div>
              <div className="col-2">
                <p>Day</p>
-               <img src={icon} alt="" width="65px"></img>
-               <p>12 C</p>
+               <img src={weatherData.icon} alt="" width="65px"></img>
+               <p>12 °C</p>
              </div>
            </div>
          </div>
@@ -113,8 +121,7 @@ export default function Weather (){
      //  function updateCity(event) {
      //    setCity(event.target.value);
      //  }
-     let city = "london"
-     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=6876f80c7fdc4d4f6b847b1ddd6523b8&units=metric`;
+     let url = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=6876f80c7fdc4d4f6b847b1ddd6523b8&units=metric`;
         axios.get(url).then(handleResponse);
      return <p>Loading...</p>;
    }
