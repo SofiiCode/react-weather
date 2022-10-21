@@ -41,9 +41,12 @@ export default function Weather (){
              />
            </div>
            <div className="col buttons">
-             <input type="submit" className="btn btn-search shadow">
-               Search
-             </input>
+             <input
+               type="submit"
+               value="Search"
+               className="btn btn-search shadow"
+             />
+
              <button className="btn btn-current shadow">Current</button>
            </div>
          </form>
@@ -70,7 +73,33 @@ export default function Weather (){
                </p>
              </div>
            </div>
-           <div className="weather-forecast"></div>
+           <div className="weather-forecast">
+             <div className="col-2">
+               <p>Day</p>
+               <img src={icon} alt="" width="65px"></img>
+               <p>12 C</p>
+             </div>
+             <div className="col-2">
+               <p>Day</p>
+               <img src={icon} alt="" width="65px"></img>
+               <p>12 C</p>
+             </div>
+             <div className="col-2">
+               <p>Day</p>
+               <img src={icon} alt="" width="65px"></img>
+               <p>12 C</p>
+             </div>
+             <div className="col-2">
+               <p>Day</p>
+               <img src={icon} alt="" width="65px"></img>
+               <p>12 C</p>
+             </div>
+             <div className="col-2">
+               <p>Day</p>
+               <img src={icon} alt="" width="65px"></img>
+               <p>12 C</p>
+             </div>
+           </div>
          </div>
        </div>
      );

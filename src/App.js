@@ -4,7 +4,7 @@ import Weather  from './Weather';
 function App() {
   return (
     <div className="App">
-     
+     <h1>Weather App</h1>
       <Weather />
       <footer className="coder">
         This project was coded by Sofiia Andrusyshyn and is open-soursed on{" "}
