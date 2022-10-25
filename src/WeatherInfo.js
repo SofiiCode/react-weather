@@ -1,8 +1,9 @@
 import React from "react";
 import FormatedDate from "./FormatedDate";
-import WeatherTemperature from "./WeatherTemperature"
+import WeatherTemperature from "./WeatherTemperature";
+import WeatherForecast from "./WeatherForecast";
 export default function WeatherInfo(props) {
- 
+ console.log(props.data.coord);
   return (
     <div className="row current-city-container shadow">
       <div className="col">
@@ -23,9 +24,8 @@ export default function WeatherInfo(props) {
         </div>
       </div>
       <div className="col weather-description-container">
-        
-          <WeatherTemperature celcius={props.data.temp} />
-        
+        <WeatherTemperature celcius={props.data.temp} />
+
         <div className="description-container">
           <p className="weather-description">
             <span>Humidity: {props.data.humidity} %</span> <br />
@@ -33,33 +33,7 @@ export default function WeatherInfo(props) {
           </p>
         </div>
       </div>
-      <div className="weather-forecast">
-        <div className="col-2">
-          <p>Day</p>
-          <img src={props.data.icon} alt="" width="65px"></img>
-          <p>12 °C</p>
-        </div>
-        <div className="col-2">
-          <p>Day</p>
-          <img src={props.data.icon} alt="" width="65px"></img>
-          <p>12 °C</p>
-        </div>
-        <div className="col-2">
-          <p>Day</p>
-          <img src={props.data.icon} alt="" width="65px"></img>
-          <p>12 °C</p>
-        </div>
-        <div className="col-2">
-          <p>Day</p>
-          <img src={props.data.icon} alt="" width="65px"></img>
-          <p>12 °C</p>
-        </div>
-        <div className="col-2">
-          <p>Day</p>
-          <img src={props.data.icon} alt="" width="65px"></img>
-          <p>12 °C</p>
-        </div>
-      </div>
+      <WeatherForecast data= {props.data.icon} coord={props.data.coord}/>
     </div>
   );
 }

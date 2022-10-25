@@ -4,6 +4,7 @@ import "./Weather.css";
 
 import WeatherInfo from "./WeatherInfo";
 
+
 export default function Weather (props){
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(`${props.defaultCity}`);
@@ -17,10 +18,10 @@ export default function Weather (props){
       wind: ` ${Math.round(response.data.wind.speed)}`,
       description: response.data.weather[0].description,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      coord: response.data.coord,
       date: new Date(response.data.dt * 1000),
     });
 
-    console.log(response);
   }
   function updateCity(event) {
     setCity(event.target.value);
@@ -37,10 +38,7 @@ export default function Weather (props){
   if (weatherData.ready) {
     return (
       <div className="container ">
-        <form
-          className="input-city row"
-           onSubmit={getApi}
-        >
+        <form className="input-city row" onSubmit={getApi}>
           <div className="col">
             <input
               className="form-control shadow"
@@ -60,6 +58,7 @@ export default function Weather (props){
           </div>
         </form>
         <WeatherInfo data={weatherData} />
+       
       </div>
     );
   } else {
