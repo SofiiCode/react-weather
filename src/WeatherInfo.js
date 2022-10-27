@@ -3,7 +3,7 @@ import FormatedDate from "./FormatedDate";
 import WeatherTemperature from "./WeatherTemperature";
 import WeatherForecast from "./WeatherForecast";
 export default function WeatherInfo(props) {
- console.log(props.data.coord);
+
   return (
     <div className="row current-city-container shadow">
       <div className="col">
