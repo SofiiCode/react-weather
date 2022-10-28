@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
-
 import WeatherInfo from "./WeatherInfo";
 
 
@@ -21,7 +20,6 @@ export default function Weather (props){
       coord: response.data.coord,
       date: new Date(response.data.dt * 1000),
     });
-
   }
   function updateCity(event) {
     setCity(event.target.value);

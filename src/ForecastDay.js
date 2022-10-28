@@ -2,7 +2,7 @@ import React from "react";
 import "./WeatherForecast.css";
 
 export default function ForecastDay(props) {
-    console.log(props)
+    
  function minTemp (){
     minTemp= `${Math.round(props.data.temp.min)}`;
     return minTemp;
@@ -25,10 +25,9 @@ export default function ForecastDay(props) {
     ];
     return days[day]
   }
-
        let iconUrl = `http://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`;
-    return (
-      
+   
+       return (
         <div >
           <p>{day()}</p>
           <img src={iconUrl} alt="" width="45px"></img>
@@ -37,7 +36,5 @@ export default function ForecastDay(props) {
             <span className="weatherForecast-min">{minTemp()}°</span>
           </div>
         </div>
-      
     );
-  
 }
