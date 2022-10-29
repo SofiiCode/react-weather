@@ -37,7 +37,7 @@ export default function Weather (props){
     return (
       <div className="container ">
         <form className="input-city row" onSubmit={getApi}>
-          <div className="col">
+          <div className="col-8">
             <input
               className="form-control shadow"
               type="search"
@@ -45,14 +45,12 @@ export default function Weather (props){
               placeholder="Type a city..."
             />
           </div>
-          <div className="col buttons">
+          <div className="col-4 buttons">
             <input
               type="submit"
               value="Search"
               className="btn btn-search shadow"
             />
-
-            <button className="btn btn-current shadow">Current</button>
           </div>
         </form>
         <WeatherInfo data={weatherData} />

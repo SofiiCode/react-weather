@@ -17,16 +17,16 @@
     width: 100%; 
 }
 .form-control{
-    width: 300px;
+    
     margin-bottom: 10px;
 }
 .buttons{
-    width: 200px;
     padding-right: 0;
     float: right; 
 }
 .btn{
-     width: 90px;
+   float: left;
+     width: 100px;
 }
 .btn-search{
     background: #EC6E4C;
@@ -41,20 +41,6 @@
     opacity: 0.9;
     color: white;
     background: #EC6E4C;
-}
-.btn-current{
-    background: #48484A;
-    border: 0;
-    margin-left: 10px;
-    color: white;
-    transition: all,2s, ease-in-out;
-}
-.btn-current:hover,
-.btn-current:active,
-.btn-current:focus{
-    opacity: 0.9;
-    background: #48484A;
-    color: white;
 }
 .current-city-container{
     width: 100%;

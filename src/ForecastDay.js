@@ -4,13 +4,11 @@ import "./WeatherForecast.css";
 export default function ForecastDay(props) {
     
  function minTemp (){
-    minTemp= `${Math.round(props.data.temp.min)}`;
-    return minTemp;
- }
+    return `${Math.round(props.data.temp.min)}`;
+ };
   function maxTemp (){
-    maxTemp= `${Math.round(props.data.temp.max)}`;
-    return maxTemp;
- }
+    return  `${Math.round(props.data.temp.max)}`;
+ };
   function day (){
     let date = new Date(props.data.dt *1000);
     let day = date.getDay();
